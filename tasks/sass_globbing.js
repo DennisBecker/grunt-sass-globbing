@@ -27,9 +27,10 @@ module.exports = function(grunt) {
 
       f.src.forEach(function(filePath) {
 
-        var importPath = path.relative(path.dirname(f.dest), filePath);
-        importPath = importPath.replace('_', '');
-        importPath = importPath.replace(path.extname(importPath), '');
+        var importPath = path.dirname(path.relative(path.dirname(f.dest), filePath));
+        var fileName = path.basename(filePath)
+        fileName = fileName.replace(/^_/, '');
+        importPath += path.sep + fileName.replace(path.extname(fileName), '');
 
         importFiles[f.dest] += '@import "' + importPath + '";\n';
       });
