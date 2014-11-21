@@ -1,8 +1,11 @@
 # grunt-sass-globbing
 
-> Create file with @import from a configured path
+> Create an import map file with @import from a configured path
+
+> This plugin is an alternative for Ruby Gem sass-globbing used with Ruby SASS
 
 ## Getting Started
+
 This plugin requires Grunt `~0.4.5`
 
 If you haven't used [Grunt](http://gruntjs.com/) before, be sure to check out the [Getting Started](http://gruntjs.com/getting-started) guide, as it explains how to create a [Gruntfile](http://gruntjs.com/sample-gruntfile) as well as install and use Grunt plugins. Once you're familiar with that process, you may install this plugin with this command:
@@ -20,16 +23,14 @@ grunt.loadNpmTasks('grunt-sass-globbing');
 ## The "sass_globbing" task
 
 ### Overview
+
 In your project's Gruntfile, add a section named `sass_globbing` to the data object passed into `grunt.initConfig()`.
 
 ```js
 grunt.initConfig({
   sass_globbing: {
-    options: {
-      // Task-specific options go here.
-    },
     your_target: {
-      // Target-specific file lists and/or options go here.
+      // Target-specific file lists
     },
   },
 });
@@ -37,53 +38,27 @@ grunt.initConfig({
 
 ### Options
 
-#### options.separator
-Type: `String`
-Default value: `',  '`
-
-A string value that is used to do something with whatever.
-
-#### options.punctuation
-Type: `String`
-Default value: `'.'`
-
-A string value that is used to do something else with whatever else.
+This plugin has no options.
 
 ### Usage Examples
 
-#### Default Options
-In this example, the default options are used to do something with whatever. So if the `testing` file has the content `Testing` and the `123` file had the content `1 2 3`, the generated result would be `Testing, 1 2 3.`
+In this example, an import map from a defined path will be created. Best practice is that the empty destination file is added to your version control, while `grunt-sass-globbing` will overwrite it with the generated import statements.
 
 ```js
 grunt.initConfig({
   sass_globbing: {
-    options: {},
     files: {
-      'dest/default_options': ['src/testing', 'src/123'],
-    },
-  },
-});
-```
-
-#### Custom Options
-In this example, custom options are used to do something else with whatever else. So if the `testing` file has the content `Testing` and the `123` file had the content `1 2 3`, the generated result in this case would be `Testing: 1 2 3 !!!`
-
-```js
-grunt.initConfig({
-  sass_globbing: {
-    options: {
-      separator: ': ',
-      punctuation: ' !!!',
-    },
-    files: {
-      'dest/default_options': ['src/testing', 'src/123'],
-    },
-  },
+      'src/_importMap.scss': 'src/partials/**/*.scss',
+      'src/_variblesMap.scss': 'src/variables/**/*.scss',
+    }
+  }
 });
 ```
 
 ## Contributing
+
 In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [Grunt](http://gruntjs.com/).
 
 ## Release History
-_(Nothing yet)_
+
+*	2014-11-21   v1.0.0   First release of grunt-sass-globbing
