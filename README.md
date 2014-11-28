@@ -26,34 +26,26 @@ grunt.loadNpmTasks('grunt-sass-globbing');
 
 In your project's Gruntfile, add a section named `sass_globbing` to the data object passed into `grunt.initConfig()`.
 
-```js
-grunt.initConfig({
-  sass_globbing: {
-    your_target: {
-      // Target-specific file lists
-    },
-  },
-});
-```
-
-### Options
-
-This plugin has no options.
-
-### Usage Examples
+### Usage Example
 
 In this example, an import map from a defined path will be created. Best practice is that the empty destination file is added to your version control, while `grunt-sass-globbing` will overwrite it with the generated import statements.
 
 ```js
 grunt.initConfig({
   sass_globbing: {
-    files: {
-      'src/_importMap.scss': 'src/partials/**/*.scss',
-      'src/_variblesMap.scss': 'src/variables/**/*.scss',
+    your_target: {
+      files: {
+        'src/_importMap.scss': 'src/partials/**/*.scss',
+        'src/_variblesMap.scss': 'src/variables/**/*.scss',
+      }
     }
   }
 });
 ```
+
+### Options
+
+This plugin has no options.
 
 ## Contributing
 
