@@ -53,4 +53,5 @@ In lieu of a formal styleguide, take care to maintain the existing coding style.
 
 ## Release History
 
+*   2014-12-01   v1.0.1   Example in documentation shows clear usage example, adds keyworks for npm search
 *	2014-11-21   v1.0.0   First release of grunt-sass-globbing
