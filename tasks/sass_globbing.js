@@ -12,7 +12,7 @@
 module.exports = function(grunt) {
 
   var fs = require('fs');
-  var path = require('path')
+  var path = require('path');
 
   grunt.registerMultiTask('sass_globbing', 'Create file with @import from a configured path', function() {
 
@@ -28,16 +28,17 @@ module.exports = function(grunt) {
       f.src.forEach(function(filePath) {
 
         var importPath = path.dirname(path.relative(path.dirname(f.dest), filePath));
-        var fileName = path.basename(filePath)
+        var fileName = path.basename(filePath);
         fileName = fileName.replace(/^_/, '');
         importPath += path.sep + fileName.replace(path.extname(fileName), '');
 
-        importFiles[f.dest] += '@import "' + importPath + '";\n';
+        importFiles[f.dest] += '@import "' + importPath.replace(/\\/, '/') + '";\n';
       });
     });
 
     for(var index in importFiles) {
       grunt.file.write(index, importFiles[index]);
+      grunt.verbose.ok(importFiles[index]);
     }
   });
 

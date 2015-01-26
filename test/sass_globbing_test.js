@@ -44,8 +44,8 @@ exports.sass_globbing = {
     var expected = grunt.file.read('test/expected/partials.scss');
     test.equal(actual, expected, 'generated partials.scss is correct');
 
-    var actual = grunt.file.read('tmp/other.scss');
-    var expected = grunt.file.read('test/expected/other.scss');
+    actual = grunt.file.read('tmp/other.scss');
+    expected = grunt.file.read('test/expected/other.scss');
     test.equal(actual, expected, 'generated other.scss is correct');
 
     test.done();
