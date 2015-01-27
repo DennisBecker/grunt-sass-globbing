@@ -1,7 +1,7 @@
 {
   "name": "grunt-sass-globbing",
   "description": "Create files with @import statement from a configured path for Sass or libsass",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "homepage": "https://github.com/DennisBecker/grunt-sass-globbing",
   "author": {
     "name": "Dennis Becker",

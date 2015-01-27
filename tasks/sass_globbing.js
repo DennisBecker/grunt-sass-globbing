@@ -32,7 +32,7 @@ module.exports = function(grunt) {
         fileName = fileName.replace(/^_/, '');
         importPath += path.sep + fileName.replace(path.extname(fileName), '');
 
-        importFiles[f.dest] += '@import "' + importPath.replace(/\\/, '/') + '";\n';
+        importFiles[f.dest] += '@import "' + importPath.replace(/\\/g, '/') + '";\n';
       });
     });
 
