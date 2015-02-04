@@ -1,5 +1,7 @@
 # grunt-sass-globbing
 
+![https://travis-ci.org/DennisBecker/grunt-sass-globbing.svg](https://travis-ci.org/DennisBecker/grunt-sass-globbing)
+
 > Create an import map file with @import from a configured path
 
 > This plugin is an alternative for Ruby Gem sass-globbing used with Ruby SASS

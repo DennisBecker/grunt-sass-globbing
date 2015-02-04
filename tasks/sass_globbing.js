@@ -47,7 +47,7 @@ module.exports = function(grunt) {
       });
     });
 
-    for(var index in importFiles) {
+    for (var index in importFiles) {
       grunt.file.write(index, importFiles[index]);
       grunt.verbose.ok(importFiles[index]);
     }
