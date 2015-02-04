@@ -36,7 +36,15 @@ exports.sass_globbing = {
 
     test.done();
   },
+  single_quotes: function(test) {
+    test.expect(1);
 
+    var actual = grunt.file.read('tmp/other-single.scss');
+    var expected = grunt.file.read('test/expected/other-single.scss');
+    test.equal(actual, expected, 'generated other.scss is correct');
+
+    test.done();
+  },
   multi_files: function(test) {
     test.expect(2);
 

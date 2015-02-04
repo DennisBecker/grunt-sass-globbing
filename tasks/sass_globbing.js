@@ -19,6 +19,16 @@ module.exports = function(grunt) {
     var importFiles = [];
     var signature = '// generated with grunt-sass-globbing\n\n';
 
+    // Merge task-specific and/or target-specific options with these defaults.
+    var options = this.options({
+      useSingleQuotes: false
+    });
+
+    var quoteSymbol = '"';
+    if (typeof options.useSingleQuotes !== 'undefined' && options.useSingleQuotes === true) {
+      quoteSymbol = '\'';
+    }
+
     this.files.forEach(function(f) {
 
       if (!(f.dest in importFiles)) {
@@ -32,7 +42,8 @@ module.exports = function(grunt) {
         fileName = fileName.replace(/^_/, '');
         importPath += path.sep + fileName.replace(path.extname(fileName), '');
 
-        importFiles[f.dest] += '@import "' + importPath.replace(/\\/g, '/') + '";\n';
+
+        importFiles[f.dest] += '@import ' + quoteSymbol + importPath.replace(/\\/g, '/') + quoteSymbol + ';\n';
       });
     });
 

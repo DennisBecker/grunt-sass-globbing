@@ -37,6 +37,9 @@ grunt.initConfig({
       files: {
         'src/_importMap.scss': 'src/partials/**/*.scss',
         'src/_variblesMap.scss': 'src/variables/**/*.scss',
+      },
+      options: {
+        useSingleQuoates: false
       }
     }
   }
@@ -45,7 +48,14 @@ grunt.initConfig({
 
 ### Options
 
-This plugin has no options.
+#### useSingleQuotes
+Type: `Boolean`
+Default: `false`
+
+Determines whether single or double quotes are used around import statements.
+
+* `false` - Double quotes are used.
+* `true` - Single quotes are used.
 
 ## Contributing
 

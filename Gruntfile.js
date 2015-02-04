@@ -48,6 +48,14 @@ module.exports = function(grunt) {
           'tmp/partials.scss': 'tmp/partials/**/*.scss',
         }
       },
+      single_quotes: {
+        files: {
+          'tmp/other-single.scss': 'tmp/other/**/*.scss'
+        },
+        options: {
+          useSingleQuotes: true
+        }
+      },
       multi_options: {
         files: {
           'tmp/partials.scss': 'tmp/partials/**/*.scss',
