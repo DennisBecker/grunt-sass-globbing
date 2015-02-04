@@ -1,6 +1,6 @@
 # grunt-sass-globbing
 
-![https://travis-ci.org/DennisBecker/grunt-sass-globbing.svg](https://travis-ci.org/DennisBecker/grunt-sass-globbing)
+[![Build Status](https://travis-ci.org/DennisBecker/grunt-sass-globbing.svg?branch=master)](https://travis-ci.org/DennisBecker/grunt-sass-globbing)
 
 > Create an import map file with @import from a configured path
 
