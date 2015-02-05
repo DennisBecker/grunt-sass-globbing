@@ -76,7 +76,7 @@ exports.sass_globbing = {
       test.equal(
         stdout.indexOf('There is also a partial next to file "tmp/bad_import/colors.scss" - merge partial _colors.scss and colors.scss to solve this issue') > -1,
         true,
-        'found partial an non-partial files named same'
+        'found partial and non-partial files named same'
       );
       test.done();
     });
