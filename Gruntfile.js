@@ -45,7 +45,7 @@ module.exports = function(grunt) {
     sass_globbing: {
       default_options: {
         files: {
-          'tmp/partials.scss': 'tmp/partials/**/*.scss',
+          'tmp/partials.scss': 'tmp/partials/**/*.scss'
         }
       },
       single_quotes: {
@@ -56,10 +56,15 @@ module.exports = function(grunt) {
           useSingleQuotes: true
         }
       },
-      multi_options: {
+      multi_files: {
         files: {
           'tmp/partials.scss': 'tmp/partials/**/*.scss',
           'tmp/other.scss': 'tmp/other/**/*.scss'
+        }
+      },
+      partial_and_non_partial_files: {
+        files: {
+          'tmp/all.scss': 'tmp/bad_import/**/*.scss'
         }
       }
     },
@@ -82,7 +87,7 @@ module.exports = function(grunt) {
 
   // Whenever the "test" task is run, first clean the "tmp" dir, then run this
   // plugin's task(s), then test the result.
-  grunt.registerTask('test', ['clean', 'copy', 'sass_globbing', 'nodeunit']);
+  grunt.registerTask('test', ['clean', 'copy', 'nodeunit']);
 
   // By default, lint and run all tests.
   grunt.registerTask('default', ['jshint', 'test']);

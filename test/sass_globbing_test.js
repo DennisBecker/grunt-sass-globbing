@@ -1,6 +1,11 @@
 'use strict';
 
-var grunt = require('grunt');
+var grunt = require('grunt'),
+  path = require('path'),
+  exec = require('child_process').exec,
+  execOptions = {
+    cwd: path.join(__dirname, '..')
+  };
 
 /*
   ======== A Handy Little Nodeunit Reference ========
@@ -30,32 +35,50 @@ exports.sass_globbing = {
   defult_options: function(test) {
     test.expect(1);
 
-    var actual = grunt.file.read('tmp/partials.scss');
-    var expected = grunt.file.read('test/expected/partials.scss');
-    test.equal(actual, expected, 'generated partials.scss is correct');
+    exec('grunt sass_globbing:default_options', execOptions, function(error, stdout) {
+      var actual = grunt.file.read('tmp/partials.scss');
+      var expected = grunt.file.read('test/expected/partials.scss');
+      test.equal(actual, expected, 'generated partials.scss is correct');
 
-    test.done();
+      test.done();
+    });
   },
   single_quotes: function(test) {
     test.expect(1);
 
-    var actual = grunt.file.read('tmp/other-single.scss');
-    var expected = grunt.file.read('test/expected/other-single.scss');
-    test.equal(actual, expected, 'generated other.scss is correct');
+    exec('grunt sass_globbing:single_quotes', execOptions, function(error, stdout) {
+      var actual = grunt.file.read('tmp/other-single.scss');
+      var expected = grunt.file.read('test/expected/other-single.scss');
+      test.equal(actual, expected, 'generated other.scss is correct');
 
-    test.done();
+      test.done();
+    });
   },
   multi_files: function(test) {
     test.expect(2);
 
-    var actual = grunt.file.read('tmp/partials.scss');
-    var expected = grunt.file.read('test/expected/partials.scss');
-    test.equal(actual, expected, 'generated partials.scss is correct');
+    exec('grunt sass_globbing:multi_files', execOptions, function(error, stdout) {
+      var actual = grunt.file.read('tmp/partials.scss');
+      var expected = grunt.file.read('test/expected/partials.scss');
+      test.equal(actual, expected, 'generated partials.scss is correct');
 
-    actual = grunt.file.read('tmp/other.scss');
-    expected = grunt.file.read('test/expected/other.scss');
-    test.equal(actual, expected, 'generated other.scss is correct');
+      actual = grunt.file.read('tmp/other.scss');
+      expected = grunt.file.read('test/expected/other.scss');
+      test.equal(actual, expected, 'generated other.scss is correct');
 
-    test.done();
+      test.done();
+    });
+  },
+  partial_and_non_partial_files: function(test) {
+    test.expect(1);
+
+    exec('grunt sass_globbing:partial_and_non_partial_files', execOptions, function(error, stdout) {
+      test.equal(
+        stdout.indexOf('There is also a partial next to file "tmp/bad_import/colors.scss" - merge partial _colors.scss and colors.scss to solve this issue') > -1,
+        true,
+        'found partial an non-partial files named same'
+      );
+      test.done();
+    });
   }
 };

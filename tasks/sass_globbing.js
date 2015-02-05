@@ -31,6 +31,8 @@ module.exports = function(grunt) {
 
     this.files.forEach(function(f) {
 
+      var importStatement = '';
+      var importStatements = [];
       if (!(f.dest in importFiles)) {
         importFiles[f.dest] = signature;
       }
@@ -42,10 +44,19 @@ module.exports = function(grunt) {
         fileName = fileName.replace(/^_/, '');
         importPath += path.sep + fileName.replace(path.extname(fileName), '');
 
+        importStatement = '@import ' + quoteSymbol + importPath.replace(/\\/g, '/') + quoteSymbol + ';\n';
 
-        importFiles[f.dest] += '@import ' + quoteSymbol + importPath.replace(/\\/g, '/') + quoteSymbol + ';\n';
+        if (importStatements.indexOf(importStatement) > -1) {
+          throw new Error('There is also a partial next to file "'+ filePath + '" - merge partial _' + fileName + ' and ' + fileName + ' to solve this issue');
+          //grunt.fail.warn('There is also a partial next to file "'+ filePath + '" - merge partial _' + fileName + ' and ' + fileName + ' to solve this issue' + "\n");
+        }
+
+        importStatements.push(importStatement);
+        importFiles[f.dest] += importStatement;
       });
     });
+
+    grunt.log.debug(importFiles);
 
     for (var index in importFiles) {
       grunt.file.write(index, importFiles[index]);
