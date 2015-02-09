@@ -7,9 +7,9 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [1.1.0] - 2015-02-09
 ### Added
-- Markdown links to version tags on release headings
-- Unreleased section to gather unreleased changes and encourage note
-keeping prior to releases.
+- Allow single quotes for @import statements
+- Check if partial and non-partial with the same name exist in the same folder
+- Add a change log file
 
 ## [1.0.3] - 2015-01-27
 ### Fixed
