@@ -65,7 +65,4 @@ In lieu of a formal styleguide, take care to maintain the existing coding style.
 
 ## Release History
 
-*	2014-01-27   v1.0.3   use replace() with global modifier to replace all backslashes with slashes
-*	2014-01-26   v1.0.2   @import statements change from directory separator from operating system to slashes needed by Sass/libsass
-*	2014-12-01   v1.0.1   Example in documentation shows clear usage example, adds keyworks for npm search
-*	2014-11-21   v1.0.0   First release of grunt-sass-globbing
+For detailed release information have a look at the [change log](CHANGELOG.md)
