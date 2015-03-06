@@ -17,7 +17,7 @@ module.exports = function(grunt) {
   grunt.registerMultiTask('sass_globbing', 'Create file with @import from a configured path', function() {
 
     var importFiles = [];
-    var signature = '// generated with grunt-sass-globbing\n\n';
+    var signature = '/* generated with grunt-sass-globbing */\n\n';
 
     // Merge task-specific and/or target-specific options with these defaults.
     var options = this.options({
