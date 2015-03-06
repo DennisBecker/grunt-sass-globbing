@@ -40,8 +40,8 @@
     "gruntplugin",
     "sass",
     "libsass",
-    "postcss"
-    "less"
+    "postcss",
+    "less",
     "node-sass",
     "glob",
     "gobbing",
