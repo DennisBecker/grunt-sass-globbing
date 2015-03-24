@@ -61,10 +61,10 @@ grunt.initConfig({
     your_target: {
       files: {
         'src/_importMap.scss': 'src/partials/**/*.scss',
-        'src/_variblesMap.scss': 'src/variables/**/*.scss',
+        'src/_variablesMap.scss': 'src/variables/**/*.scss',
       },
       options: {
-        useSingleQuoates: false
+        useSingleQuotes: false
       }
     }
   }
@@ -79,10 +79,10 @@ grunt.initConfig({
     your_target: {
       files: {
         'src/_importMap.css': 'src/partials/**/*.css',
-        'src/_variblesMap.css': 'src/variables/**/*.css',
+        'src/_variablesMap.css': 'src/variables/**/*.css',
       },
       options: {
-        useSingleQuoates: false
+        useSingleQuotes: false
       }
     }
   }
@@ -97,10 +97,10 @@ grunt.initConfig({
     your_target: {
       files: {
         'src/_importMap.less': 'src/partials/**/*.less',
-        'src/_variblesMap.less': 'src/variables/**/*.less',
+        'src/_variablesMap.less': 'src/variables/**/*.less',
       },
       options: {
-        useSingleQuoates: false
+        useSingleQuotes: false
       }
     }
   }
