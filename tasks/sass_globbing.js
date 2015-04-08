@@ -39,10 +39,10 @@ module.exports = function(grunt) {
 
       f.src.forEach(function(filePath) {
 
-        if (filePath == f.dest) {
+        if (filePath === f.dest) {
           return;
           // if the current filePath is the same as the file.dest then skip this loop
-        };
+        }
 
         var importPath = path.dirname(path.relative(path.dirname(f.dest), filePath));
         var fileName = path.basename(filePath);
