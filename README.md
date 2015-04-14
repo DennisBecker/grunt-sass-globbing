@@ -49,11 +49,12 @@ grunt.loadNpmTasks('grunt-sass-globbing');
 
 In your project's Gruntfile, add a section named `sass_globbing` to the data object passed into `grunt.initConfig()`.
 
-### Usage Examples
+### Usage Example
 
-In this example, an import map from a defined path will be created. Best practice is that the empty destination file is added to your version control, while `grunt-sass-globbing` will overwrite it with the generated import statements.
+In this example, an import map from a defined path will be created.
+You might want to add an empty destination file to your version control, while `grunt-sass-globbing` will overwrite it with the generated import statements.
 
-#### Usage with libsass or Ruby Sass
+#### Usage with all options
 
 ```js
 grunt.initConfig({
@@ -71,41 +72,9 @@ grunt.initConfig({
 });
 ```
 
-#### Usage with PostCSS
+#### Usage with CSS prepocessors other than Sass engines
 
-```js
-grunt.initConfig({
-  sass_globbing: {
-    your_target: {
-      files: {
-        'src/_importMap.css': 'src/partials/**/*.css',
-        'src/_variablesMap.css': 'src/variables/**/*.css',
-      },
-      options: {
-        useSingleQuotes: false
-      }
-    }
-  }
-});
-```
-
-#### Usage with Less
-
-```js
-grunt.initConfig({
-  sass_globbing: {
-    your_target: {
-      files: {
-        'src/_importMap.less': 'src/partials/**/*.less',
-        'src/_variablesMap.less': 'src/variables/**/*.less',
-      },
-      options: {
-        useSingleQuotes: false
-      }
-    }
-  }
-});
-```
+If you want to use an other CSS preprocessor, just change the file extension from `.scss` to the file extension supported by the preprocessor.
 
 ### Options
 
