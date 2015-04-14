@@ -5,6 +5,14 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased][unreleased]
 
+## [1.3.0] - 2015-04-14
+### Added
+- Destination file can be written within source path and won't reference itself
+
+### Changed
+- typo fixes in usage examples
+- remove two examples and add a description how to use other CSS preprocessors for a better overview and readability
+
 ## [1.2.0] - 2015-03-06
 ### Added
 - Description of supported CSS preprocessors and postprocessors
@@ -37,7 +45,8 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 - First release of grunt-sass-globbing
 
-[unreleased]: https://github.com/DennisBecker/grunt-sass-globbing/compare/v1.2.0...HEAD
+[unreleased]: https://github.com/DennisBecker/grunt-sass-globbing/compare/v1.3.0...HEAD
+[1.3.0]: https://github.com/DennisBecker/grunt-sass-globbing/compare/v1.2.0...v1.3.0
 [1.2.0]: https://github.com/DennisBecker/grunt-sass-globbing/compare/v1.1.0...v1.2.0
 [1.1.0]: https://github.com/DennisBecker/grunt-sass-globbing/compare/v1.0.3...v1.1.0
 [1.0.3]: https://github.com/DennisBecker/grunt-sass-globbing/compare/v1.0.2...v1.0.3
