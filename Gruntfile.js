@@ -66,6 +66,11 @@ module.exports = function(grunt) {
         files: {
           'tmp/all.scss': 'tmp/bad_import/**/*.scss'
         }
+      },
+      globbed_target_inside_globbed_folder: {
+        files: {
+          'tmp/partials/_partials.scss': 'tmp/partials/**/*.scss'
+        }
       }
     },
 

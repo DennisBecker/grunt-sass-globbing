@@ -80,5 +80,16 @@ exports.sass_globbing = {
       );
       test.done();
     });
+  },
+  globbed_target_inside_globbed_folder: function(test) {
+    test.expect(1);
+
+    exec('grunt sass_globbing:globbed_target_inside_globbed_folder', execOptions, function(error, stdout) {
+      var actual = grunt.file.read('tmp/partials/_partials.scss');
+      var expected = grunt.file.read('test/expected/_partials.scss');
+      test.equal(actual, expected, 'generated partials/partials.scss is correct');
+
+      test.done();
+    });
   }
 };
