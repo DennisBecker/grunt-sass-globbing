@@ -17,17 +17,17 @@ module.exports = function(grunt) {
   grunt.registerMultiTask('sass_globbing', 'Create file with @import from a configured path', function() {
 
     var importFiles = [];
-    var signature = '/* generated with grunt-sass-globbing */\n\n';
 
     // Merge task-specific and/or target-specific options with these defaults.
     var options = this.options({
-      useSingleQuotes: false
+      useSingleQuotes: false,
+      signature: '/* generated with grunt-sass-globbing */'
     });
 
-    if(typeof options.signature === 'string' && options.signature !== false){
-      signature = options.signature + '\n\n';
+    if(typeof options.signature === 'string' && options.signature !== ''){
+      options.signature = options.signature + '\n\n';
     } else if (options.signature === false) {
-      signature = '';
+      options.signature = '';
     }
 
     var quoteSymbol = '"';
@@ -40,7 +40,7 @@ module.exports = function(grunt) {
       var importStatement = '';
       var importStatements = [];
       if (!(f.dest in importFiles)) {
-        importFiles[f.dest] = signature;
+        importFiles[f.dest] = options.signature;
       }
 
       f.src.forEach(function(filePath) {
