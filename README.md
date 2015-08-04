@@ -66,6 +66,7 @@ grunt.initConfig({
       },
       options: {
         useSingleQuotes: false
+        signature: '// Hello, World!'
       }
     }
   }
@@ -86,6 +87,26 @@ Determines whether single or double quotes are used around import statements.
 
 * `false` - Double quotes are used.
 * `true` - Single quotes are used.
+
+#### signature
+Type: `string`
+Default: `/* generated with grunt-sass-globbing */\n\n`
+
+Sets the signature for the map files.
+
+* `false` - Disables adding of signature.
+
+### Usage in SCSS file
+
+In this example, your file is located in src/screen.scss. This file imports the generated map files
+described iin the example Gruntfile above.
+
+```scss
+@import "importMap";
+@import "variablesMap";
+
+// more imports or rules
+```
 
 ## Contributing
 
