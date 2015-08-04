@@ -1,7 +1,7 @@
 {
   "name": "grunt-sass-globbing",
   "description": "@import file map creation for Sass, PostCSS or Less",
-  "version": "1.3.0",
+  "version": "1.4.0",
   "homepage": "https://github.com/DennisBecker/grunt-sass-globbing",
   "author": {
     "name": "Dennis Becker",
