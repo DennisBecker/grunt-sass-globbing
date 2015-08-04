@@ -71,6 +71,22 @@ module.exports = function(grunt) {
         files: {
           'tmp/partials/_partials.scss': 'tmp/partials/**/*.scss'
         }
+      },
+      custom_signature: {
+        files: {
+          'tmp/partials/_partials.scss': 'tmp/partials/**/*.scss'
+        },
+        options: {
+          signature: '// Hello, World!'
+        }
+      },
+      no_signature: {
+        files: {
+          'tmp/partials/_partials.scss': 'tmp/partials/**/*.scss'
+        },
+        options: {
+          signature: false
+        }
       }
     },
 

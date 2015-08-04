@@ -91,5 +91,27 @@ exports.sass_globbing = {
 
       test.done();
     });
+  },
+  custom_signature: function(test) {
+    test.expect(1);
+
+    exec('grunt sass_globbing:custom_signature', execOptions, function(error, stdout) {
+      var actual = grunt.file.read('tmp/partials/_partials.scss');
+      var expected = grunt.file.read('test/expected/_partials.custom_signature.scss');
+      test.equal(actual, expected, 'generated partials/partials.scss is correct');
+
+      test.done();
+    });
+  },
+  no_signature: function(test) {
+    test.expect(1);
+
+    exec('grunt sass_globbing:no_signature', execOptions, function(error, stdout) {
+      var actual = grunt.file.read('tmp/partials/_partials.scss');
+      var expected = grunt.file.read('test/expected/_partials.no_signature.scss');
+      test.equal(actual, expected, 'generated partials/partials.scss is correct');
+
+      test.done();
+    });
   }
 };

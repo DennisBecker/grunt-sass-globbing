@@ -24,6 +24,12 @@ module.exports = function(grunt) {
       useSingleQuotes: false
     });
 
+    if(typeof options.signature === 'string' && options.signature !== false){
+      signature = options.signature + '\n\n';
+    } else if (options.signature === false) {
+      signature = '';
+    }
+
     var quoteSymbol = '"';
     if (typeof options.useSingleQuotes !== 'undefined' && options.useSingleQuotes === true) {
       quoteSymbol = '\'';
