@@ -55,7 +55,7 @@ module.exports = function(grunt) {
         fileName = fileName.replace(/^_/, '');
         importPath += path.sep + fileName.replace(path.extname(fileName), '');
 
-        importStatement = '@import ' + quoteSymbol + importPath.replace(/\\/g, '/') + quoteSymbol + ';\n';
+        importStatement = '@import ' + quoteSymbol + importPath.replace(/\\/g, '/').replace(/\.\//g, '') + quoteSymbol + ';\n';
 
         if (importStatements.indexOf(importStatement) > -1) {
           throw new Error('There is also a partial next to file "'+ filePath + '" - merge partial _' + fileName + ' and ' + fileName + ' to solve this issue');
