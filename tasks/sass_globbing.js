@@ -34,7 +34,7 @@ module.exports = function(grunt) {
       quoteSymbol = '\'';
     }
 
-    if  (support == 'sass') {
+    if  (support === 'sass') {
       quoteSymbol = '';
     }
 
