@@ -25,7 +25,7 @@ module.exports = function(grunt) {
     });
 
     var support = 'sass';
-    if(typeof options.useSingleQuotes !== 'undefined' && options.syntax == 'sass') {
+    if(typeof options.useSingleQuotes !== 'undefined' && options.syntax === 'sass') {
       support = options.syntax;
     }
 
@@ -59,7 +59,7 @@ module.exports = function(grunt) {
         importPath += path.sep + fileName.replace(path.extname(fileName), '');
 
         importStatement = '@import ' + quoteSymbol + importPath.replace(/\\/g, '/') + quoteSymbol;
-        if (support != 'sass') {
+        if (support !== 'sass') {
           importStatement += ';';
         }
         importStatement += '\n';
