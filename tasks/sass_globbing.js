@@ -17,17 +17,16 @@ module.exports = function(grunt) {
   grunt.registerMultiTask('sass_globbing', 'Create file with @import from a configured path', function() {
 
     var importFiles = [];
+    var signature = '/* generated with grunt-sass-globbing */\n\n';
 
     // Merge task-specific and/or target-specific options with these defaults.
     var options = this.options({
-      useSingleQuotes: false,
-      signature: '/* generated with grunt-sass-globbing */'
+      useSingleQuotes: false
     });
 
-    if(typeof options.signature === 'string' && options.signature !== ''){
-      options.signature = options.signature + '\n\n';
-    } else if (options.signature === false) {
-      options.signature = '';
+    var support = 'sass';
+    if(typeof options.useSingleQuotes !== 'undefined' && options.syntax == 'sass') {
+      support = options.syntax;
     }
 
     var quoteSymbol = '"';
@@ -35,12 +34,16 @@ module.exports = function(grunt) {
       quoteSymbol = '\'';
     }
 
+    if  (support == 'sass') {
+      quoteSymbol = '';
+    }
+
     this.files.forEach(function(f) {
 
       var importStatement = '';
       var importStatements = [];
       if (!(f.dest in importFiles)) {
-        importFiles[f.dest] = options.signature;
+        importFiles[f.dest] = signature;
       }
 
       f.src.forEach(function(filePath) {
@@ -55,7 +58,12 @@ module.exports = function(grunt) {
         fileName = fileName.replace(/^_/, '');
         importPath += path.sep + fileName.replace(path.extname(fileName), '');
 
-        importStatement = '@import ' + quoteSymbol + importPath.replace(/\\/g, '/').replace(/\.\//g, '') + quoteSymbol + ';\n';
+        importStatement = '@import ' + quoteSymbol + importPath.replace(/\\/g, '/') + quoteSymbol;
+        if (support != 'sass') {
+          importStatement += ';';
+        }
+        importStatement += '\n';
+
 
         if (importStatements.indexOf(importStatement) > -1) {
           throw new Error('There is also a partial next to file "'+ filePath + '" - merge partial _' + fileName + ' and ' + fileName + ' to solve this issue');
