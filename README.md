@@ -65,7 +65,7 @@ grunt.initConfig({
         'src/_variablesMap.scss': 'src/variables/**/*.scss',
       },
       options: {
-        useSingleQuotes: false
+        useSingleQuotes: false,
         signature: '// Hello, World!'
       }
     }
