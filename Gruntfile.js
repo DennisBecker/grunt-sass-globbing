@@ -48,6 +48,11 @@ module.exports = function(grunt) {
           'tmp/partials.scss': 'tmp/partials/**/*.scss'
         }
       },
+      exclude_file: {
+        files: {
+          'tmp/partials.scss': ['tmp/partials/**/*.scss', '!tmp/**/_post.scss']
+        }
+      },
       single_quotes: {
         files: {
           'tmp/other-single.scss': 'tmp/other/**/*.scss'
