@@ -43,6 +43,17 @@ exports.sass_globbing = {
       test.done();
     });
   },
+  exclude_file: function(test) {
+    test.expect(1);
+
+    exec('grunt sass_globbing:exclude_file', execOptions, function(error, stdout) {
+      var actual = grunt.file.read('tmp/partials.scss');
+      var expected = grunt.file.read('test/expected/_partials.exclude_file.scss');
+      test.equal(actual, expected, 'generated partials.scss is correct');
+
+      test.done();
+    });
+  },
   single_quotes: function(test) {
     test.expect(1);
 
