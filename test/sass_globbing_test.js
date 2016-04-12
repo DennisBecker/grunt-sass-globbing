@@ -124,5 +124,16 @@ exports.sass_globbing = {
 
       test.done();
     });
+  },
+  correct_directory_traversel: function(test) {
+    test.expect(1);
+
+    exec('grunt sass_globbing:correct_directory_traversel', execOptions, function(error, stdout) {
+      var actual = grunt.file.read('tmp/scss/_components.scss');
+      var expected = grunt.file.read('test/expected/_correct_directory_traversal.scss');
+      test.equal(actual, expected, 'generated components.scss is correct');
+
+      test.done();
+    });
   }
 };
