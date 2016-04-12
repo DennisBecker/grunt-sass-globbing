@@ -92,6 +92,11 @@ module.exports = function(grunt) {
         options: {
           signature: false
         }
+      },
+      correct_directory_traversel: {
+          files: {
+            'tmp/scss/_components.scss': 'tmp/components/**/*.scss'
+          }
       }
     },
 
