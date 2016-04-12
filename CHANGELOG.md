@@ -5,6 +5,14 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased][unreleased]
 
+## [1.5.0] - 2016-04-12
+## Added
+- supports grunt v1.0.0
+- example to exclude files
+
+### Changed
+- import files on same folder without "./" prefix
+
 ## [1.4.0] - 2015-08-04
 ### Added
 - Option to set a custom signature or to disable signature
@@ -50,8 +58,9 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 - First release of grunt-sass-globbing
 
-[unreleased]: https://github.com/DennisBecker/grunt-sass-globbing/compare/v1.4.0...HEAD
-[1.3.0]: https://github.com/DennisBecker/grunt-sass-globbing/compare/v1.3.0...v1.4.0
+[unreleased]: https://github.com/DennisBecker/grunt-sass-globbing/compare/v1.5.0...HEAD
+[1.5.0]: https://github.com/DennisBecker/grunt-sass-globbing/compare/v1.4.0...v1.5.0
+[1.4.0]: https://github.com/DennisBecker/grunt-sass-globbing/compare/v1.3.0...v1.4.0
 [1.3.0]: https://github.com/DennisBecker/grunt-sass-globbing/compare/v1.2.0...v1.3.0
 [1.2.0]: https://github.com/DennisBecker/grunt-sass-globbing/compare/v1.1.0...v1.2.0
 [1.1.0]: https://github.com/DennisBecker/grunt-sass-globbing/compare/v1.0.3...v1.1.0

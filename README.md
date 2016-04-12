@@ -51,8 +51,9 @@ In your project's Gruntfile, add a section named `sass_globbing` to the data obj
 
 ### Usage Example
 
-In this example, an import map from a defined path will be created.
-You might want to add an empty destination file to your version control, while `grunt-sass-globbing` will overwrite it with the generated import statements.
+In this example, an import map from a defined path will be created. You can also ignore files, you will find details about the syntax at [node-glob](https://github.com/isaacs/node-glob).
+
+You should exclude the generated file from your version control system.
 
 #### Usage with all options
 
@@ -62,7 +63,7 @@ grunt.initConfig({
     your_target: {
       files: {
         'src/_importMap.scss': 'src/partials/**/*.scss',
-        'src/_variablesMap.scss': 'src/variables/**/*.scss',
+        'src/_variablesMap.scss': ['src/variables/**/*.scss', '!src/variables/foo.css'],
       },
       options: {
         useSingleQuotes: false,
