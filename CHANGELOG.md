@@ -5,6 +5,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased][unreleased]
 
+## [1.5.1] - 2016-04-12
+## Fixed
+- directory traversal issue introduced with PR #18 fixed, do not remove globally alls "./" - just remove it when strings begins with it
+
 ## [1.5.0] - 2016-04-12
 ## Added
 - supports grunt v1.0.0
@@ -58,7 +62,8 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 - First release of grunt-sass-globbing
 
-[unreleased]: https://github.com/DennisBecker/grunt-sass-globbing/compare/v1.5.0...HEAD
+[unreleased]: https://github.com/DennisBecker/grunt-sass-globbing/compare/v1.5.1...HEAD
+[1.5.0]: https://github.com/DennisBecker/grunt-sass-globbing/compare/v1.5.0...v1.5.1
 [1.5.0]: https://github.com/DennisBecker/grunt-sass-globbing/compare/v1.4.0...v1.5.0
 [1.4.0]: https://github.com/DennisBecker/grunt-sass-globbing/compare/v1.3.0...v1.4.0
 [1.3.0]: https://github.com/DennisBecker/grunt-sass-globbing/compare/v1.2.0...v1.3.0
